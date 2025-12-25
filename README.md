@@ -17,7 +17,5 @@ The goal is to move beyond basic analysis and implement robust **feature extract
 * **Encoding:** Converting categorical variables (`sex`, `region`, `smoker`) using **One-Hot Encoding** and **Label Encoding**.
 * **Scaling:** Normalizing numerical features like `age` and `bmi` using **StandardScaler** to ensure uniform weight distribution during model training.
 
-### 3. Feature Engineering & Extraction
-* **Domain-Specific Features:** Creating an `is_obese` flag (BMI > 30).
-* **Interaction Features:** Extracting high-impact features like `obese_smoker` to capture non-linear relationships.
-* **Binning:** Transforming `age` into life-stage categories (e.g., Youth, Middle-Aged, Senior).
+### 3. Feature Engineering
+* **Domain-Specific Features:** Created an `is_obese` flag based on a BMI threshold (> 30) to highlight high-risk categories, which is a key driver in insurance costs.
