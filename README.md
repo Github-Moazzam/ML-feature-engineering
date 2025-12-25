@@ -21,19 +21,3 @@ The goal is to move beyond basic analysis and implement robust **feature extract
 * **Domain-Specific Features:** Creating an `is_obese` flag (BMI > 30).
 * **Interaction Features:** Extracting high-impact features like `obese_smoker` to capture non-linear relationships.
 * **Binning:** Transforming `age` into life-stage categories (e.g., Youth, Middle-Aged, Senior).
-
----
-
-## 📂 Repository Structure
-```text
-├── data/
-│   ├── raw/                # Original insurance.csv from Kaggle
-│   └── processed/          # Cleaned and engineered dataset (ready for ML)
-├── notebooks/
-│   └── feature_analysis.ipynb
-├── src/
-│   ├── cleaning.py         # Scripts for outlier and null handling
-│   ├── preprocessing.py    # Scripts for scaling and encoding
-│   └── engineering.py      # Scripts for feature creation/extraction
-├── requirements.txt        # Dependencies (pandas, scikit-learn, etc.)
-└── README.md
