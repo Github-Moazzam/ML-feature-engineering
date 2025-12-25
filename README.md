@@ -11,7 +11,7 @@ The goal is to move beyond basic analysis and implement robust **feature extract
 
 ### 1. Data Cleaning
 * **Outlier Detection:** Identifying and handling extreme values in `charges` and `bmi` using IQR and Z-score methods.
-* **Integrity Checks:** Handling missing values and ensuring data type consistency across all features.
+* **Integrity Checks:** Handling duplicate values and ensuring data type consistency across all features.
 
 ### 2. Feature Preprocessing
 * **Encoding:** Converting categorical variables (`sex`, `region`, `smoker`) using **One-Hot Encoding** and **Label Encoding**.
