@@ -18,4 +18,4 @@ The goal is to move beyond basic analysis and implement robust **feature extract
 * **Scaling:** Normalizing numerical features like `age` and `bmi` using **StandardScaler** to ensure uniform weight distribution during model training.
 
 ### 3. Feature Engineering
-* **Domain-Specific Features:** Created an `is_obese` flag based on a BMI threshold (> 30) to highlight high-risk categories, which is a key driver in insurance costs.
+* **Domain-Specific Features:** Created an `isObese`,`isNormal` etc, flag based on a BMI threshold (> 30) to highlight high-risk categories, which is a key driver in insurance costs.
