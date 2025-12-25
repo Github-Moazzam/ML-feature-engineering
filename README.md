@@ -1,27 +1,39 @@
-# Medical Insurance Cost Prediction 🏥
+# Data Preprocessing, Cleaning, & Feature Engineering for ML
 
-This project analyzes a health insurance dataset to identify key factors influencing medical charges and builds a machine learning pipeline to predict future costs.
+## 📌 Project Overview
+This repository focuses on the essential **Data Engineering** phase of the machine learning pipeline. Using the **Medical Insurance Cost dataset**, this project demonstrates how to transform raw, messy data into a high-quality format optimized for predictive modeling.
 
-## 📋 Project Overview
-- **Objective:** Predict individual medical costs billed by health insurance.
-- **Key Findings:** Smoking status and BMI are the highest correlated features with insurance charges.
-- **Tools Used:** Python, Pandas, Matplotlib, Seaborn, Scikit-Learn, SciPy.
+The goal is to move beyond basic analysis and implement robust **feature extraction** and **engineering** techniques that directly improve model performance.
 
-## 🛠️ Data Pipeline
-1. **Data Cleaning:** Standardized inconsistent categorical tags (e.g., 'M', 'male' -> 'Male').
-2. **Exploratory Data Analysis (EDA):** Performed correlation analysis using Pearson's $r$ and Chi-Square tests for categorical significance.
-3. **Feature Engineering:** Binned BMI into health categories (Underweight, Normal, Overweight, Obese).
-4. **Preprocessing:** - One-Hot Encoding for categorical features.
-   - Standard Scaling for numerical features (`age`, `bmi`, `children`) to ensure model stability.
+---
 
-## 📈 Key Visualizations
-> *Tip: You can save one of your Seaborn heatmaps as a .png and upload it here!*
+## 🛠️ Key Features
 
-## 🚀 How to Run
-1. Clone the repo: `git clone https://github.com/yourusername/Medical-Insurance-Cost-Predictor.git`
-2. Install dependencies: `pip install pandas numpy matplotlib seaborn scikit-learn scipy`
-3. Run the notebook: `jupyter notebook Untitled.ipynb`
+### 1. Data Cleaning
+* **Outlier Detection:** Identifying and handling extreme values in `charges` and `bmi` using IQR and Z-score methods.
+* **Integrity Checks:** Handling missing values and ensuring data type consistency across all features.
 
-## 📊 Statistical Analysis Results
-- **Numerical Features:** Pearson correlation identified `isSmoker` as a dominant predictor.
-- **Categorical Features:** Chi-Square testing confirmed that `bmi_category` and `isSmoker` have a statistically significant relationship with the cost bins ($p < 0.05$).
+### 2. Feature Preprocessing
+* **Encoding:** Converting categorical variables (`sex`, `region`, `smoker`) using **One-Hot Encoding** and **Label Encoding**.
+* **Scaling:** Normalizing numerical features like `age` and `bmi` using **StandardScaler** to ensure uniform weight distribution during model training.
+
+### 3. Feature Engineering & Extraction
+* **Domain-Specific Features:** Creating an `is_obese` flag (BMI > 30).
+* **Interaction Features:** Extracting high-impact features like `obese_smoker` to capture non-linear relationships.
+* **Binning:** Transforming `age` into life-stage categories (e.g., Youth, Middle-Aged, Senior).
+
+---
+
+## 📂 Repository Structure
+```text
+├── data/
+│   ├── raw/                # Original insurance.csv from Kaggle
+│   └── processed/          # Cleaned and engineered dataset (ready for ML)
+├── notebooks/
+│   └── feature_analysis.ipynb
+├── src/
+│   ├── cleaning.py         # Scripts for outlier and null handling
+│   ├── preprocessing.py    # Scripts for scaling and encoding
+│   └── engineering.py      # Scripts for feature creation/extraction
+├── requirements.txt        # Dependencies (pandas, scikit-learn, etc.)
+└── README.md
